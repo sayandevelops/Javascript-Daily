@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sayan | Full Stack Dev</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+  <!-- Swiper.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <!-- AOS Animation -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
+  <!-- Custom style -->
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    ::selection { background: #60a5fa; color: white; }
+  </style>
+</head>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition duration-300">
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow px-6 py-4 flex justify-between items-center">
+    <div class="text-xl font-bold">💼 Sayan.dev</div>
+    <div class="space-x-6 hidden md:flex">
+      <a href="#home" class="hover:text-blue-500">Home</a>
+      <a href="#projects" class="hover:text-blue-500">Projects</a>
+      <a href="#services" class="hover:text-blue-500">Services</a>
+      <a href="#contact" class="hover:text-blue-500">Contact</a>
+    </div>
+    <button id="themeToggle" class="ml-4 p-2 bg-gray-200 dark:bg-gray-700 rounded">🌙</button>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="py-20 text-center px-6">
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4" data-aos="fade-up">Hi, I'm <span class="text-blue-600">Sayan</span></h1>
+    <p class="text-lg md:text-xl max-w-xl mx-auto mb-6" data-aos="fade-up" data-aos-delay="200">
+      <span id="typing-text" class="font-semibold text-blue-500"></span>
+    </p>
+    <a href="#projects" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition">Explore Projects</a>
+  </section>
+
+  <!-- Projects Slider -->
+  <section id="projects" class="py-20 px-6 bg-gray-50 dark:bg-gray-800">
+    <h2 class="text-3xl font-bold text-center mb-10" data-aos="fade-up">Featured Projects</h2>
+    <div class="swiper mySwiper max-w-6xl mx-auto" data-aos="fade-up">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide p-6 rounded-xl bg-white dark:bg-gray-700 shadow-xl">
+          <h3 class="text-xl font-semibold mb-2">🔥 AI Recipe Generator</h3>
+          <p>Food AI that creates recipes from your ingredients.</p>
+        </div>
+        <div class="swiper-slide p-6 rounded-xl bg-white dark:bg-gray-700 shadow-xl">
+          <h3 class="text-xl font-semibold mb-2">🎨 Portfolio V3</h3>
+          <p>Next.js, Tailwind, SEO, scroll animation & blogs.</p>
+        </div>
+        <!-- Add more as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-20 px-6">
+    <h2 class="text-3xl font-bold text-center mb-10" data-aos="fade-up">What I Do</h2>
+    <div class="grid gap-10 md:grid-cols-3 max-w-6xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold mb-2">🌐 Web Development</h3>
+        <p>Full-stack sites using MERN, Tailwind, and APIs.</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold mb-2">🤖 AI Integration</h3>
+        <p>Custom AI chatbots for niche use: health, ed-tech, etc.</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition">
+        <h3 class="text-xl font-semibold mb-2">📸 Creative Design</h3>
+        <p>Modern UI/UX, branding, banners, and thumbnails.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section id="contact" class="py-20 px-6 text-center bg-blue-600 text-white">
+    <h2 class="text-3xl font-bold mb-4">Have a project in mind?</h2>
+    <p class="mb-6">Let's bring it to life. I'm available for freelance, part-time, and collabs.</p>
+    <a href="mailto:sayandevelops@gmail.com" class="inline-block bg-white text-blue-600 font-semibold px-6 py-3 rounded-xl hover:bg-gray-100">Contact Me</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-10 text-sm dark:bg-gray-900">
+    <p>© 2025 Sayan Mondal | sayandevelops.vercel.app</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      autoplay: { delay: 4000 },
+      breakpoints: { 768: { slidesPerView: 2 } }
+    });
+
+    // Typing Animation
+    const typingText = ["Full Stack Developer", "AI Integrator", "Web Designer"];
+    let i = 0, j = 0, current = '', isDeleting = false, target = document.getElementById('typing-text');
+    function type() {
+      if (i < typingText.length) {
+        current = typingText[i];
+        target.textContent = isDeleting ? current.substring(0, j--) : current.substring(0, j++);
+        if (!isDeleting && j === current.length) {
+          isDeleting = true;
+          setTimeout(type, 1000);
+        } else if (isDeleting && j === 0) {
+          isDeleting = false;
+          i = (i + 1) % typingText.length;
+        }
+        setTimeout(type, isDeleting ? 50 : 100);
+      }
+    }
+    type();
+
+    // Theme Toggle
+    const themeBtn = document.getElementById('themeToggle');
+    themeBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      themeBtn.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>
