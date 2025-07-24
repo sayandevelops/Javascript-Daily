@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USER ACCOUNT WITH UNIQUE ID</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="register-container">
+    <h2>Create Account</h2>
+    <form id="registerForm">
+      <div class="form-group">
+        <label for="Username">Username</label>
+        <input type="text" id="name" placeholder="Enter Username" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Create a password" required />
+      </div>
+
+      <button type="submit" class="register-btn">Register</button>
+    </form>
+    <div class="login-link" id="login-here">
+      Already have an account? <a id="loginhere" style="cursor: pointer;">Login here</a>
+    </div>
+  </div>
+
+  <div class="login-container" id="loginContainer" style="display: none;">
+    <h2>Login to Your Account</h2>
+    <form id="startlogin"> 
+      <div class="form-group">
+        <label for="Username">Username</label>
+        <input type="text" id="Logname" placeholder="Enter Your Username Username" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="Logpassword" placeholder="Enter your password" required />
+      </div>
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+    <div class="register-link">
+      Don't have an account? <a href="#" id="registerbtn">Register here</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
