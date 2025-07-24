@@ -27,7 +27,7 @@ registerForm.addEventListener('submit', async function (event) {
   }
 
   try {
-    const res = await fetch('mongodb+srv://sayon8023:<db_password>@cluster0.xsmlhug.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/register', {
+    const res = await fetch('mongodb+srv://sayon8023:<db_password>@cluster0.xsmlhug.mongodb.net/?retryWrites=true&w=majority&appName=Cluster', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password })
@@ -50,7 +50,7 @@ startlogin.addEventListener('submit', async function (event) {
   const logpassword = document.getElementById('Logpassword').value;
 
   try {
-    const res = await fetch('mongodb+srv://sayon8023:<db_password>@cluster0.xsmlhug.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/login', {
+    const res = await fetch('mongodb+srv://sayon8023:<db_password>@cluster0.xsmlhug.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username: logname, password: logpassword })
